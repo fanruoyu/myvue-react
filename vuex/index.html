@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="constains">
+
+    </div>
+    <script src="../lib/vue.js"></script>
+    <script src="../lib/vuex.js"></script>
+    <script>
+        //数据模板 
+        let store = new Vuex.Store({
+            state: {
+                count: 1
+            },
+            mutations:{
+                // 通过commit['名']调用
+                increat (state, step = 1) {
+                    state.count += step
+                },
+                decreat (state) {
+                    state.count -= 1
+                }
+            },
+            actions:{//commit调动mutations里的方法，在methods中使用dispatch(['名'])调用方法
+                async_decreat (store) {
+                    setTimeout(() => {
+                        store.commit('decreat')
+                    }, 1000)
+                }
+            },
+            getters:{
+                //做判断的时候用
+                odd (state) {
+                    return state.count  % 2 === 0 ? state.count : '奇数'
+                }
+            }
+        })
+        let {mapState, mapMutations, mapActions, mapGetters} = Vuex
+        // 视图模板
+        let vm = new Vue({
+            el: '.constains',
+            store: store,
+            computed:{
+                ...mapGetters(['odd']),
+                ...mapState(['count'])
+            },
+            template: `
+                <div>
+                    <p>获取偶数{{$store.getters.odd}}</p>
+                    <p>获取偶数{{odd}}</p>
+                    <p>{{this.$store.state.count}}</p>
+                    <p>{{count}}</p>
+                    <button @click='increat'>增加</button>
+                    <button @click='async_decreat'>异步减少</button>
+                </div>
+            `,
+            // methods: {
+            //     ...mapMutations(['increat']),
+            //     ...mapActions(['async_decreat'])
+            // },
+            methods:  {
+                increat () {
+                    this.$store.commit('increat', 2)
+                },
+                async_decreat () {
+                    this.$store.dispatch('async_decreat')
+                }
+            }
+           
+        })
+        // 优先级 template< render
+    </script>
+</body>
+</html>

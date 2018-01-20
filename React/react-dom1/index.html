@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>react-dom1</title>
+    <script src="../react-libs/react.development.js"></script>
+    <script src="../react-libs/react-dom.development.js"></script>
+    <script src="../react-libs/babel.min.js"></script>
+    <style>
+        .main{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"></div>
+    <script type="text/babel">
+    // 纯函数组件 苏建者负责渲染dom不做任何操作 函数名称必须大写首字母
+    // 变量的使用必须用{}引起来
+    // 添加行内样式
+        function Tick(params) {
+            console.log(params)
+            let styleObj = {
+                color: 'red',
+                background: '#ccc',
+                border:'1px solid #000'
+            }
+            return (<ul style={styleObj}><li>{new Date().toLocaleString()}</li></ul>)
+        }
+    // render函数内部传两个参数，参数一为渲染的dom结构，参数二为渲染到的根元素
+    // 传参数是直接在白浅上写属性及值就好在纯函数内不用parpms参数接收
+    // 动态参数写在单花括号内部
+    // 支持的是驼峰式命名
+    // 设置样式时候为标签添加类名使用的是className
+    // 在{}内可进行js代码
+        let names = ['Alice', 'Emily', 'Kate']
+        let myTime = '2017-12-25'
+        ReactDOM.render(
+            <div>
+                <h1 className='main'>Hello Word!</h1>
+                <Tick time="2018-01-01"/>
+                <Tick time={myTime}/>
+                <div>
+                    {names.map((name, index) => {
+                        return <p key={index}>Hello, {name}!</p>
+                    })}
+                </div>
+            </div>,
+            document.getElementById('wrap')
+        )
+    </script>
+</body>
+</html>

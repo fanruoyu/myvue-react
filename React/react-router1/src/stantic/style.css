@@ -1,0 +1,514 @@
+@meta charset:UTF-8;
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: .32rem; }
+
+ul, li {
+  list-style: none; }
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size:.32rem; }
+
+img, div, body, html, ul, li, a {
+  -webkit-touch-callout: none; }
+  img input::-webkit-input-placeholder, img textarea::-webkit-input-placeholder, div input::-webkit-input-placeholder, div textarea::-webkit-input-placeholder, body input::-webkit-input-placeholder, body textarea::-webkit-input-placeholder, html input::-webkit-input-placeholder, html textarea::-webkit-input-placeholder, ul input::-webkit-input-placeholder, ul textarea::-webkit-input-placeholder, li input::-webkit-input-placeholder, li textarea::-webkit-input-placeholder, a input::-webkit-input-placeholder, a textarea::-webkit-input-placeholder {
+    color: #999; }
+
+input {
+  outline: 0; }
+  
+*{
+	margin: 0;padding: 0;list-style: none;font-style: normal;text-decoration: none;
+}
+html,body,#root, .home{
+	width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.home{
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  flex:1;
+  overflow:hidden;
+}
+.content .router {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.index .index_header {
+  width:100%;
+  height:1rem;
+  background:rgb(245, 100, 100);
+  color:#fff;
+  position: relative;
+}
+.index .index_header h1 {
+  text-align:center;
+  line-height:1rem;
+  font-size:.4rem;
+}
+.index .index_header h1 i {
+  font-size:.4rem;
+  margin-right:.2rem;
+}
+.index .index_header> i {
+  position: absolute;
+  right:.2rem;
+  top:.15rem;
+  font-size:.6rem;
+}
+
+.index .doubledl {
+  width:100%;
+  padding: .2rem 0;
+  display:flex;
+  border-bottom:1px solid #ccc;
+}
+.index .doubledl dl{
+  flex:1;
+  padding: 0 .2rem;
+}
+.index .doubledl dl dd {
+  color:#ccc;
+  margin-bottom:.1rem;
+}
+.index .doubledl dl dt {
+  font-size:.54rem;
+  color:red;
+}
+.index .doubledl dl:nth-child(1) {
+  border-right:1px solid #ccc;
+}
+
+.index .swiper {
+  width: 100%;
+  height: 100%;
+}
+.index .swiper img{
+  width: 100%;
+}
+.list .header{
+  width: 100%;
+  height: 1rem;
+  background: #ED5858;
+  color:#fff;
+  position: relative;
+  line-height: 1rem;
+  text-align: center;
+  font-size: .4rem;
+}
+.list .header i {
+  position: absolute;
+  font-size: .54rem;
+  right: .2rem;
+}
+.list>section {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.list>section .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: rgba(0,0,0,.6);
+}
+.list>section .mask ul {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 0 .2rem;
+}
+.list>section .mask ul li {
+  line-height: 1.2rem;
+  border-bottom: 1px  solid #ccc;
+  padding: 0 .2rem;
+}
+.list>section .mask ul li span {
+  display: inline-block;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  border:1px solid #ccc;
+  vertical-align: middle;
+  margin: 0 .3rem;
+}
+.list>section .mask ul li {
+  font-size: .4rem;
+  position: relative;
+}
+.list>section .mask ul li i{
+  position: absolute;
+  font-size: .5rem;
+  left:.49rem;;
+  top:.045rem;
+  color: green;
+}
+
+.more{
+  background: #eee;
+}
+.more h1 {
+  height: 1rem;
+  background: #FF6161;
+  color: #fff;
+  font-size: .4rem;
+  text-align: center;
+  line-height: 1rem;
+}
+.more p {
+  background: #fff;
+  margin-top: .3rem;
+  line-height: 1.2rem;
+  padding: 0 .4rem;
+}
+.more p i {
+  font-size: .54rem;
+  vertical-align: middle;
+}
+.more p span {
+  display: inline-block;
+  margin-left:.3rem;
+}
+.more p:nth-child(2) i {
+  color: skyblue;
+  font-size: .8rem;
+}
+.more p:nth-child(3) span {
+  margin-left:.2rem;
+}
+.more p:nth-child(4) i, .more p:nth-child(3) i, .more p:nth-child(4) i {
+  color: yellow;
+}
+.more p:nth-child(5) i, .more p:nth-child(6) i {
+  color: green
+}
+
+.nav {
+  width: 100%;
+  height: 1rem;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav span {
+  flex:1;
+  text-align: center;
+  border-bottom:1px solid rgba(0,0,0,0);
+  margin-top:-0.1rem;
+  line-height: 1rem;
+  font-size: .32rem;
+}
+.nav  .active {
+  background: rgba(222,222,222,.7);
+  color: lightseagreen
+}
+.navconts {
+  flex:1;
+  overflow: hidden;
+  background: #eee;
+}
+
+.produce1, .produce2{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding:0 .2rem;
+  background: #fff;
+}
+.produce1 .sections1, .produce2 .sections2 {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+  padding:.2rem 0;
+  padding-top: 0;
+}
+.produce1 .sections1> p, .produce2 .sections2> p{
+  padding: .2rem 0;
+}
+.produce1 .sections1> p span{
+  color: #AAAAAA;
+  border-left:1px solid #ccc;
+  margin-left:.2rem;
+  padding-left:.2rem;
+} 
+.produce2 .sections1> p span {
+  color: #AAAAAA;
+}
+.produce1 .sections1 section, .produce2 .sections2 section{
+  display: flex;
+  justify-content: space-between
+}
+.produce1 .sections1 section> p, .produce2 .sections2 section> p {
+  color: #AAAAAA;
+}
+.produce1 .sections1 section> p:nth-child(1) {
+  position: relative;
+  padding-right: .4rem;
+}
+.produce2 .sections2 section> p:nth-child(1){
+  position: relative;
+}
+.produce1 .sections1 section> p em, .produce2 .sections2 section> p em{
+    font-size: 1rem;
+    color: #FF8800;
+}
+.produce1 .sections1 section> p em b{
+  font-size: .6rem;
+  font-weight: normal;
+}
+.produce2 .sections2 section> p em b {
+  font-size: .54rem;
+  font-weight: normal;
+}
+.produce1 .sections1 section> p:nth-child(1) small {
+  position: absolute;
+  right: 0rem;
+  top:0
+}
+.produce2 .sections2 section> p:nth-child(1) small {
+  position: absolute;
+  right: 0rem;
+  top:0
+}
+.produce1 .sections1 section> p:nth-child(2) small, .produce2 .sections2 section> p:nth-child(2) small {
+  display: block;
+}
+.produce1 .sections1 section> p:nth-child(2) span, .produce2 .sections2 section> p:nth-child(2) span{
+  font-size: .6rem;
+  color: #333;
+}
+.produce1 .sections1 section div, .produce2 .sections2 section div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.produce1 .sections1 section div p, .produce2 .sections2 section div p {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #FF6161;
+  color: #fff;
+  line-height: 1rem;
+  text-align: center;
+  margin-top:-.4rem;
+}
+.produce1 .sections1 section div small,.produce2 .sections2 section div small{
+  color: #AAAAAA;
+  font-size: .28rem;
+}
+.produce1 .sections1 section div small span, .produce2 .sections2 section div small span{
+  color: #FF6161
+}
+
+.my .topHeader{
+  width: 100%;
+  padding:.2rem 0;
+  background: rgb(245, 100, 100);
+}
+.my .topHeader h1 {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  margin:.3rem auto;
+  text-align: center;
+  line-height: 2rem;
+}
+.my .topHeader h1 img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.my .topHeader .btn {
+  width: 100%;
+  text-align: center;
+}
+.my .topHeader .btn button {
+  margin-left:.2rem;
+  width: 2rem;
+  padding:.2rem 0;
+  color: #fff;
+  font-size: .4rem;
+  border-radius: 10px;
+}
+.loginBtn {
+  background: orange;
+  border:0;
+}
+.resignBtn {
+  background: rgb(245, 100, 100);
+  border:1px solid #eee;
+}
+.myContent {
+  flex: 1;
+  background: #fff;
+  overflow-y: scroll;
+}
+.my .my_list {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  padding:.3rem 0;
+}
+.my .my_list li {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my .my_list li span {
+  font-size: .34rem;
+  margin-top: .2rem;
+}
+.my .my_list li i {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  color: #fff;
+  font-size: .6rem;
+  text-align: center;
+  line-height: 1rem;
+  border-radius: 50%;
+}
+.my .my_list li:nth-child(1) i{
+  background: green;
+}
+.my .my_list li:nth-child(2) i{
+  background: rgb(53, 115, 187)
+}
+.my .my_list li:nth-child(3) i{
+  background: rgba(255, 0, 0, 0.623);
+  font-size: .8rem;
+}
+.my .my_list li:nth-child(4) i{
+  background:orange;
+}
+.ol_list {
+  width:100%;
+}
+.ol_list li {
+  border-bottom:1px solid #ccc;
+  padding:.3rem;
+  position: relative;
+}
+.ol_list li i {
+  font-size:.54rem;
+  vertical-align:middle;
+}
+.ol_list li:nth-child(4) i {
+  font-size:.34rem;
+}
+.ol_list li i:nth-child(1){
+  margin-right:.2rem;
+}
+.ol_list li i:nth-child(2) {
+  position: absolute;;
+  color:#ccc;
+  right:.3rem;
+  font-size:.4rem;
+}
+.ol_list li span{
+  font-size:.4rem;
+}
+.ol_list li small {
+  position: absolute;
+  right:.8rem;
+  font-size:.34rem;
+  color:#ccc;
+  vertical-align:middle;
+}
+.ol_list li:nth-child(1) i:nth-child(1) {
+  color:rgba(255, 0, 0, 0.623);
+} 
+.ol_list li:nth-child(2) i:nth-child(1) {
+  color:orange;
+} 
+.ol_list li:nth-child(3) i:nth-child(1) {
+  color:green;
+} 
+.ol_list li:nth-child(4) i:nth-child(1) {
+  color:rgb(53, 115, 187);
+} 
+
+.footer{
+  width: 100%;
+  height: 1.2rem;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  display: flex;
+}
+.footer a{
+  flex:1;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer a i {
+  font-size: .48rem;
+  margin-top: .1rem;
+}
+.footer a span{
+  text-align: center;
+  font-size: .32rem;
+  line-height: .5rem;
+}
+.footer a.active {
+  background: lightcoral;
+  color:#fff;
+}
+
+.login .conetn {
+  width:90%;
+  height: 30%;
+  position: absolute;
+  left:5%;
+  top: 20%;
+  background: lightblue;
+}
+.login .conetn p{
+  line-height: 1rem;
+}
+.login .conetn label {
+  display: inline-block;
+  width: 1.5rem;
+  text-align: center;
+}
+.login .conetn input{
+  padding:.15rem;
+  border:1px solid #ccc;
+  border-radius: .2rem;
+}
+.login .conetn button {
+  width: 50%;
+  margin-left:25%;
+  margin-top: .5rem;
+  padding:.2rem 0;
+  border:none;
+  background: lightseagreen;
+  color: #fff;
+  border-radius: .1rem;
+  font-size: .4rem;
+}

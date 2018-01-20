@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="constains">
+
+    </div>
+    <script src="../lib/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.constains',
+            data: {
+                count: 2
+            },
+            template: `
+                <div>我的template</div>
+            `,
+            render:function(createElement){
+                return createElement('div',{'class': 'wrap'},[
+                    createElement('h1', {
+                        domProps: {
+                            innerHTML: this.count
+                        }
+                    }),
+                    createElement('button',{
+                        on: {
+                            click: this.add
+                        }
+                    },['增加']),
+                    createElement('button',{},['减少'])
+                ])
+            },
+            methods: {
+                add: function() {
+                    this.count += 1
+                }
+            }
+        })
+        // 优先级 template< render
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../react-libs/react.development.js"></script>
+    <script src="../react-libs/react-dom.development.js"></script>
+    <script src="../react-libs/babel.min.js"></script>
+</head>
+<body>
+    <div id="wrap"></div>
+    <div id="root"></div>
+    <script type="text/babel">
+    // 实现组件的嵌套 类似于slot插槽
+    function Parent(params) {
+        return (<div>我是父级组件 {params.children}</div>)
+    }
+    function Child(params) {
+        return (<div>子集子集</div>)
+    }
+        ReactDOM.render(
+            <div>
+                <Parent>
+                    <Child />
+                </Parent>
+            </div>,
+            document.getElementById('wrap')
+        )
+    // 实现form表单的获取input内容
+    class Form extends React.Component {
+        constructor () {
+            super();
+            this.state = {
+                value: ''
+            };
+            this.submit = this.submit.bind(this);
+            this.getValue = this.getValue.bind(this);
+        }
+        submit (e) {
+            e.preventDefault();
+            console.log(this.state.value);
+        }
+        getValue (e) {
+            this.setState({
+                value: e.target.value
+            })
+        }
+        render () {
+            return (
+                <form onSubmit={this.submit}>
+                    <input type="text" value={this.state.value} onChange={this.getValue}/>
+                    <input type="submit" value="提交"/>
+                </form>
+            )
+        }
+    }
+    ReactDOM.render(
+        <div>
+            <Form />
+        </div>,
+        document.getElementById('root')
+    )
+    </script>
+</body>
+</html>

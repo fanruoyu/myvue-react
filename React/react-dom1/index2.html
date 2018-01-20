@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>react-dom1</title>
+    <script src="../react-libs/react.development.js"></script>
+    <script src="../react-libs/react-dom.development.js"></script>
+    <script src="../react-libs/babel.min.js"></script>
+</head>
+<body>
+    <div id="wrap"></div>
+    <script type="text/babel">
+        // 高级组件ES6类
+        class Test extends React.Component {
+            // 钩子函数 创建期=> 存在期=>摧毁期
+            // 创建期
+            componentWillMount () {
+                console.log('WillMount')
+            }
+            render () {
+                console.log('Rendering')
+                const {msg} = this.props;
+                return (
+                    <div>{msg}</div>
+                )
+            }
+            componentDidMount () {
+                console.log('DidMount')
+            }
+            // 存在期
+            componentWillReceiveProps () {
+                console.log('Recieve') 
+            }
+            shouldComponentUpdate () {
+                // 是否允许更新，false则停止以下运行，true为允许更新
+                console.log('ShouldUpdate');
+                return true
+            }
+            componentWillUpdate () {
+                console.log('WillUpdate')
+            }
+            componentDidUpdate () {
+                console.log('DidUpdate')
+            }
+            componentWillUnmount () {
+                console.log('WillUnmout')
+            }
+        }
+        class UpTest extends React.Component{
+            constructor () {
+                super();
+                this.state = {
+                    msg: 'Hello Word!!',
+                    flag: true
+                }
+            }
+            componentDidMount () {
+                setTimeout(() => {
+                    this.setState({
+                        msg: 'Hello React!!',
+                        flag: true
+                    })
+                }, 2000);
+                setTimeout(() => {
+                    this.setState({
+                        msg: 'Hello React!!',
+                        flag: false
+                    })
+                }, 3000);
+            }
+            render () {
+                let arr = [1,2,3]
+                return (<div>
+                    {this.state.flag && <Test msg= {this.state.msg}/>}
+                    {
+                        arr.map((item, index) => {
+                            return <p key={index}>{item}</p>
+                        })
+                    }
+                </div>)
+            }
+        }
+        ReactDOM.render(
+            <div>
+                <h1>高级函数</h1>
+                <UpTest/>
+            </div>,
+            document.getElementById('wrap')
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fonts/iconfont.css">
+    <script src="../react-libs/react.development.js"></script>
+    <script src="../react-libs/react-dom.development.js"></script>
+    <script src="../react-libs/babel.min.js"></script>
+    <script src="./js/fontSize.js"></script>
+</head>
+
+<body>
+    <div id="wrap"></div>
+    <script type="text/babel">
+        // input组件
+       function Myinput(params) {
+           let divObj = {
+            width: '100%',
+            height: '1.3rem',
+            position: 'relative',
+           }
+           let inputObj = {
+               width: '94%',
+               padding: '.25rem 0',
+               border: 'none',
+               background: '#E8E8EA',
+               borderRadius: '10px',
+               margin: '.2rem 3%'
+           }
+           return (<div style={divObj} className='form'>
+                    <input style={inputObj} type='text'/>
+                    <i className="icon iconfont icon-refresh"></i>
+                    </div>)
+       }
+       function Mydl(params) {
+        return (
+            <dl className='mydl'>
+                <dt>
+                    <img src="./img/1.jpeg" />
+                </dt>
+                <dd>
+                    <h2>用户名12345</h2>
+                    <p>中译语通科技（北京）有限公司</p>
+                </dd>
+            </dl>
+        )
+       }
+       function Mycont(params) {
+           return (
+            <div className="mycont">
+                <h2><span>已购买数据有效期:</span>2011-11-1至2012-11-8</h2>
+                <p><span>行业:</span>经济；娱乐；社会</p>
+                <p><span>账户数:</span>4</p>
+                <p><span>新闻媒体源:</span>新闻（国内）200；新闻（国外）300；</p>
+                <p><span>社交媒体源:</span>新浪微博；Facebook</p>
+            </div>
+            )
+       }
+       class Smallp extends React.Component{
+           render () {
+               let itemObj = this.props.item;
+               return (
+                    <p>
+                        <i className={itemObj.icon}></i>
+                        {itemObj.text}
+                    </p>
+                )
+           }
+       }
+       class Tablist extends React.Component {
+            constructor () {
+                super();
+                this.state = {
+                    arr: [
+                        {
+                            ind: 0,
+                            text: '我的采编',
+                            icon: 'icon iconfont icon-wodedingdan'
+                        },
+                        {
+                            ind: 1,
+                            text: '我的收藏',
+                            icon: 'icon iconfont icon-favor'
+                        },
+                        {
+                            ind: 2,
+                            text: '账号设置',
+                            icon: 'icon iconfont icon-shezhi'
+                        },
+                        {
+                            ind: 3,
+                            text: '意见反馈',
+                            icon: 'icon iconfont icon-comment'
+                        }
+                    ],
+                    ind: 0
+                }
+            }
+           render () {
+               return (
+                <div className="tablist">
+                    {
+                        this.state.arr.map((item, index) => {
+                            return <div  key={index} onClick={() => {this.setState({
+                                ind: index
+                            })}} className={this.state.ind == index ? 'active': ''}><Smallp item={item}></Smallp></div>
+                        })
+                    }
+                </div>
+               )
+           }
+       }
+       function Last(params) {
+           return (
+                    <div className="single">
+                        <p><i className="icon iconfont icon-tishi"></i>如何购买</p>
+                        <button>退出</button>
+                    </div>
+                )
+       }
+        ReactDOM.render(
+            <div className='content'>
+                <Myinput/>
+                <h1 className='tit'>个人中心<i className="icon iconfont icon-back"></i></h1>
+                <Mydl/>
+                <Mycont/>
+                <Tablist/>
+                <Last/>
+            </div>,
+            document.getElementById('wrap')
+        )
+    </script>
+</body>
+
+</html>

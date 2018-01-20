@@ -1,0 +1,5 @@
+export const UPDATA_LIST = 'UPDATA_LIST'
+export const UPDATA_BOOL = 'UPDATA_BOOL'
+export const DELETE_LIST = 'DELETE_LIST'
+export const CLEAR = 'CLEAR'
+export const FILTER = 'FILTER'

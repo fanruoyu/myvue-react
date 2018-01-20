@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现双向绑定</title>
+    <script src="../react-libs/react.development.js"></script>
+    <script src="../react-libs/react-dom.development.js"></script>
+    <script src="../react-libs/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    let dom = document.getElementById('root');
+    class Input1 extends React.Component{
+        constructor () {
+            super ();
+            this.Value1Fn = this.Value1Fn.bind(this)
+        }
+        Value1Fn (e) {
+            this.props.changeFn(e.target.value, this.props.name)
+        }
+        render () {
+            let  {name} = this.props;
+            return (
+                <p>{name}：<input type="text" value={this.props.value2} onChange={this.Value1Fn}/></p>
+            )
+        }
+    }
+    class Parent extends React.Component {
+        constructor () {
+            super ();
+            this.state = {
+                value2: 0,
+                type: 'Centigrade'
+            }
+            this.getValueFromInput1 = this.getValueFromInput1.bind(this)
+        }
+        getValueFromInput1 (val, name) {
+            this.setState({
+                value2: val,
+                type: name
+            })
+        }
+        render () {
+            let Centigrade, Fahrenheit;
+            if (this.state.type === 'Centigrade') {
+                Centigrade = this.state.value2;
+                Fahrenheit = 32 + Centigrade * 1.8;
+            } else {
+               Fahrenheit = this.state.value2;
+               Centigrade = (Fahrenheit - 32) / 1.8;
+            }
+            return (
+                <div>
+                    计算式： 
+                    <p>华氏度(℉)= 32 + 摄氏度(℃) × 1.8</p>
+                    <p>摄氏度(℃)=(华氏度(℉) - 32) / 1.8</p>
+                    <Input1 name="Centigrade" value2={Centigrade} changeFn={this.getValueFromInput1}/>
+                    <Input1 name="Fahrenheit" value2={Fahrenheit} changeFn={this.getValueFromInput1}/>
+                </div>
+            )
+        }
+    }
+        ReactDOM.render(
+            <Parent />,
+            dom
+        )
+    </script>
+</body>
+</html>

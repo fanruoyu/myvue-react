@@ -1,0 +1,39 @@
+/*登录页面*/
+#register{width:100%;height:100%;background:url(../images/bgimg.png) top center no-repeat;background-size:100%;background-color:#67649F;}
+#register .comtent-box{width:100%;margin:0 auto;overflow:hidden;position: fixed;top:180px;}
+#register .right-box{width:315px;height:248px;background-color:#fff;border-radius:10px;overflow:hidden;float:right;margin-right:260px;}
+#register .Power{float:right;clear:both;margin-right:361px;color:#fff;margin-top:20px;font-size:14px;}
+#register .title{font-size:16px;color:#fff;background-color:#67649F;height:40px;line-height:40px;text-indent:20px;}
+#register .input-box{margin-top:15px;padding:0 26px;}
+#register .input-box input{margin: 0px;border: 1px solid #ddd;width:230px;height:30px;background-repeat: no-repeat;background-position: 15px center;border-radius:15px;text-indent:25px;}
+#register .beforeImg:before{content:"";display: block;width:30px;height:30px;float:left;}
+#register .user:before{background: url(../images/user.png) left center no-repeat;background-size:15px 15px;}
+#register .pwd:before{background: url(../images/pwd.png) left center no-repeat;background-size:15px 15px;}
+#register .btn{width:263px;height:36px;border-radius: 6px;background-color:#67649F;text-align:center;line-height:36px;font-size: 16px;color: #fff;cursor:pointer;border:none;outline:none;}
+
+/*登录失败页面样式*/
+#defeated{position:fixed;width:358px;padding:30px;top:50%;left:50%;margin-left:-209px;margin-top:-112px;text-align: center;}
+#defeated .text{font-size:22px;color:#333;}
+#defeated .text .btn{font-size:16px;margin:0 15px;}
+#defeated .link{font-size:18px;margin:0 auto;margin-top:25px;display: block;width:120px;line-height:40px;height:40px;border:1px solid #ddd;text-emphasis:none;}
+#defeated .link .f18{font-size:12px;}
+/*解决谷歌浏览器记住密码的黄色北京*/
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+/*设置placeholde颜色*/
+input::-webkit-input-placeholder{color:#D9D9D9;}
+
+#checked .remember{
+	display:block;
+	float:left;
+	width:12px;
+	height:12px;
+	border:1px solid #d9d9d9;
+	margin-right:15px;
+	border-radius:2px;
+}
+.input-box label{line-height:14px;cursor:pointer;user-select: none;}
+.input-box .active{
+ 	background:url("../../assets/images/rememberYes.png") center center no-repeat;
+ 	background-size:12px;
+}
+

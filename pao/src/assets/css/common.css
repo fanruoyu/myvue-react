@@ -1,0 +1,223 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin:0; padding:0; }
+body { font-size:14px; color:#666; font-family: Microsoft YaHei,SimSun;background: #f6f6f6;line-height: 2;}
+fieldset, img { border:0; }
+ol, ul { list-style:none; }
+em { font-style:normal; }
+input, button, select, textarea { outline:none; }
+textarea { resize:none;overflow:auto;font-size:14px} /*禁用了文本的拖拉，尤其在谷歌下*/
+a {text-decoration:none; }
+i{display: inline-block;}
+span{display: inline-block;}
+em,th {font-weight:normal; font-style:normal;}
+a{color:inherit;text-decoration:none;display: inline-block;}
+a:hover{text-decoration:none; }
+table { border-collapse:collapse; border-spacing:0; }
+html,body,#app{width:100%;height:100%;}
+input{border:1px solid #bbb;border-radius:4px}
+::-ms-clear,::-ms-reveal{
+  display: none;
+}
+/*设置浮动*/
+.fl{float:left;}
+.fr{float:right;}
+.clear{clear: both;}
+.clear-f{clear: left}
+.clear-r{clear: right}
+/*设置字体大小*/
+.f12{font-size:12px;}
+.f14{font-size:14px;}
+.f16{font-size:16px;}
+.f18{font-size:18px;}
+/*设置定位*/
+.absolute{position: absolute;}
+.relative{position:relative;}
+/*设置小手*/
+.cursor{cursor: pointer;}
+/*超出部分用点点点*/
+.dot{
+	/*white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;*/
+
+	overflow:hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	word-break: normal;
+}
+/*设置颜色*/
+.color-w{color:#fff}     /*纯白色*/
+.color-4{color:#444}     /*纯黑色*/
+/***********公用头部********************/
+.header{
+	width: 100%;
+	height:60px;
+	background: #fff;
+	border-color:#ccc;
+	-moz-box-shadow: 2px 2px 2px #888888;
+	box-shadow: 2px 2px 2px #888888;
+	font-size:14px;
+	position:fixed;
+	z-index:980;
+}
+.header .head-left{
+	width:240px;
+	height:100%;
+}
+.header .logo{
+	margin-top:9px;
+	margin-left:20px;
+  display:block;
+  float:left;
+}
+.header .text{
+  float:left;
+  color:#303A5F;
+  font-size:16px;
+  margin-left:15px;
+  height:60px;
+  line-height:60px;
+}
+.header .head-right{
+	width:auto;
+	height:100%;
+	margin-right:20px;
+}
+.header .head-right div{
+	width:auto;
+	margin:0 20px;
+	height:40px;
+	line-height:40px;
+	margin-top:10px;
+	cursor: pointer;
+}
+.header .head-right .info-box label{
+	display: inline-block;
+	width:14px;
+	height:14px;
+	line-height:14px;
+	text-align: center;
+	border-radius:14px;
+	background: red;
+	top:3px;
+	right:-12px;
+	color:#fff;
+	font-size:12px;
+}
+.header .head-right .name-box ul{
+	margin-top:5px;
+}
+.header .head-right .name-box li{
+	height:15px;
+	line-height:15px;
+	overflow: hidden;
+}
+.header .head-right .name-box .li-one{
+	font-weight: bold;
+}
+.header .head-right img{
+	margin-top:12px;
+	margin-right:8px;
+}
+.header .head-right .exit {
+	margin-left:5px;
+}
+.header .head-right .exit span{
+	margin-top:10px;
+	height:20px;
+	line-height:20px;
+	padding-left:25px;
+	border-left:2px solid #ccc;
+}
+/**页面内容区域**/
+#main-con{
+	width:100%;
+	min-height:100px;
+	padding-top:60px;
+}
+/***公用左侧导航**/
+.main-menu-box{
+	height:100%;
+	border-right:1px solid #ccc;
+	float:left;
+	position: relative;
+	width:18%;
+}
+.menu-list{
+    width:100%;
+    height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	overflow-y:auto;
+	z-index: 200;
+}
+/***公用template样式**/
+.view-box{
+	margin-left:18%;
+	height:100%;
+	width:82%;
+	position:fixed;
+	z-index:980;
+
+}
+.view-box .view{
+	height:100%;
+	overflow-y:auto;
+}
+/***百度地图去掉默认文字**/
+.anchorBL{display:none;}
+
+/*提示函数 */
+.tanTip {
+  min-height: 22px;
+  padding:8px;
+  line-height:22px;
+  width: 380px;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px #ddd;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  position: fixed;
+  top: 31%;
+  left: 50%;
+  margin-left: -145px;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.4)
+}
+/*********** 取消保存公用头部 **************/
+  #conMod{
+    width:100%;
+    overflow: auto;
+  }
+ .closeNav{
+    width:100%;
+    height:50px;
+    background-color:#67649F;
+   display: flex;
+  }
+  .closeNav .tit{
+  	color:#fff;
+  	height:50px;
+  	line-height:50px;
+    text-align: center;
+    flex:1;
+    overflow:hidden;
+  }
+  .closeNav .closeButton,
+  .closeNav .saveButton{
+    width:80px;
+    height:30px;
+    line-height:30px;
+    margin-right:15px;
+    text-align:center;
+    border:1px solid #fff;
+    border-radius:4px;
+    cursor:pointer;
+    margin-top:10px;
+  }
+  .closeNav .closeButton{background-color:#67649F;color:#fff;}
+  .closeNav .saveButton{color:#67649F;background-color:#fff;}

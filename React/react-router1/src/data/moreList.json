@@ -1,0 +1,26 @@
+[
+    {
+        "text": "新闻公告",
+        "icon": "icon iconfont icon-xiaoquxinwen"
+    },
+    {
+        "text": "土豪榜",
+        "icon": "icon iconfont icon-huangguan"
+    },
+    {
+        "text": "关于我们",
+        "icon": "icon iconfont icon-douzikongxin"
+    },
+    {
+        "text": "联系我们",
+        "icon": "icon iconfont icon-dianhua"
+    },
+    {
+        "text": "用户协议",
+        "icon": "icon iconfont icon-jilu"
+    },
+    {
+        "text": "帮助中心",
+        "icon": "icon iconfont icon-icontishiwenhao"
+    }
+]
